@@ -39,3 +39,10 @@ It should work for random inputs too -  Expected: "F", instead got: "E"
  
   Testing for ["e", "f", "g", "h", "i", "j", "k", "l", "n", "o", "p", "q", "r", "s", "t", "u"]
 It should work for random inputs too -  Expected: "m", instead got: "d"
+
+
+better way 
+
+def find_missing_letter(arr)
+  (arr.first..arr.last).to_a.each { |i| return i if !arr.include?(i) }
+end

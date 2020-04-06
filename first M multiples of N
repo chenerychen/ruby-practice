@@ -1,0 +1,10 @@
+def multiples(m, n)
+  res = []
+
+  (1..m).each do |num|
+   res << num * n 
+  end 
+ return res       
+end
+
+p multiples(3, 5.0)

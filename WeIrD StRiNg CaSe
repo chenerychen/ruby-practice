@@ -1,0 +1,19 @@
+def weirdcase(string) 
+    res = []
+    arr = string.split(" ")
+    
+    arr.each do |words| 
+     words.each_char.with_index do |char, idx| 
+      if idx.even? 
+       words[idx] = words[idx].upcase
+        end 
+      end 
+    end 
+    arr.join(" ") 
+end
+
+
+
+p weirdcase('This')  #, 'ThIs');
+p weirdcase('is')  #, 'Is');
+p weirdcase('This is a test')   #, 'ThIs Is A TeSt');

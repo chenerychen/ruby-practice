@@ -1,0 +1,21 @@
+level 8 
+
+
+def rps(p1, p2)
+   s = 'scissors'
+   p = 'paper'
+   r = 'rock'
+
+   if (p1 == s && p2 == p) || (p1 == p && p2 == r  || p1 == r && p2 == s) 
+     return 'Player 1 won!'
+   elsif (p1 == p2) 
+     return "Draw!"
+   else 
+     return 'Player 2 won!'
+   end 
+end
+
+
+p rps('scissors','paper') #// Player 1 won!
+p rps('scissors','rock') #// Player 2 won!
+p rps('paper','paper') #// Draw!

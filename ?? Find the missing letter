@@ -1,13 +1,41 @@
 6 kyu
+def idx_finder(arr) 
+    alpha = 'abcedfghijklmnopqrstuvwxyz'.split("") 
+    place = []
+    
+    arr.each.with_index do |char, idx| 
+        if alpha.include?(char.downcase) 
+        place << alpha.index(char.downcase)
+        end 
+      end 
+    
+    return place  
+end 
 
 def find_missing_letter(arr)
-    alpha = 'abcedfghijklmnopqrstuvwxyz'.split("") 
+    alpha = 'abcedfghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUWXYZ'.split("") 
+    idx = idx_finder(arr) 
     
+    arr.each.with_index do |char| 
+    idx.each.with_index do |num,i| 
+        if idx[i+1] - idx[i] > 1 && char == char.downcase 
+          return alpha[(num + 1) % alpha.length ] 
+        elsif  idx[i+1] - idx[i] > 1 && char == char.upcase 
+         return alpha[(num + 1) % alpha.length ].upcase
+        end 
+      end 
+    end 
 end
 
 
-find_missing_letter(["a","b","c","d","f"])# , "e")
-find_missing_letter(["O","Q","R","S"])# , "P")
-find_missing_letter(["b","d"])# , "c")
-find_missing_letter(["a","b","d"])# , "c")
-find_missing_letter(["b","d","e"]) #, "c")
+ Testing for ["D", "E", "G", "H", "I", "J"]
+It should work for random inputs too -  Expected: "F", instead got: "D"
+
+ Testing for ["A", "B", "C", "D", "E", "G", "H", "I", "J", "K"]
+It should work for random inputs too -  Expected: "F", instead got: "E"
+
+ Testing for ["e", "g"]
+ It should work for random inputs too -  Expected: "f", instead got: "d"
+ 
+  Testing for ["e", "f", "g", "h", "i", "j", "k", "l", "n", "o", "p", "q", "r", "s", "t", "u"]
+It should work for random inputs too -  Expected: "m", instead got: "d"

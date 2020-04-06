@@ -1,0 +1,13 @@
+6 kyu
+
+def find_missing_letter(arr)
+    alpha = 'abcedfghijklmnopqrstuvwxyz'.split("") 
+    
+end
+
+
+find_missing_letter(["a","b","c","d","f"])# , "e")
+find_missing_letter(["O","Q","R","S"])# , "P")
+find_missing_letter(["b","d"])# , "c")
+find_missing_letter(["a","b","d"])# , "c")
+find_missing_letter(["b","d","e"]) #, "c")

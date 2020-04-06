@@ -1,0 +1,34 @@
+Level 5 
+
+def counter(str) 
+  count = Hash.new(0) 
+
+  str.each_char do |char| 
+    count[char.downcase] += 1 
+  end 
+  count 
+end 
+
+def first_non_repeating_letter(str)
+    count = counter(str) 
+       
+  if str == ''
+    return ''
+  end 
+
+    count.each do |k, v| 
+       if v == 1 && str.index(k.upcase) != nil
+          return k.upcase  
+       elsif v == 1 
+          return k 
+       end
+   end 
+   return ''
+end 
+
+
+p first_non_repeating_letter('a')# , 'a')
+p first_non_repeating_letter('stress')# , 't')
+p first_non_repeating_letter('moonmen')# , 'e')
+p first_non_repeating_letter('')# , '')
+

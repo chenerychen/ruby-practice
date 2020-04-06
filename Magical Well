@@ -1,0 +1,24 @@
+level 7 
+Magical Well
+
+def magical_well(a, b, n)
+    res = 0
+    
+    if n == 1 
+       return a * b
+    end 
+    
+    i = 0
+    while i <  n
+       res += (a+i) * (b+i) 
+   
+    i += 1 
+    end 
+    
+   return res 
+end
+
+
+p magical_well(1,2,2) , 8)
+p magical_well(1,1,1) , 1)
+p magical_well(6,5,3) , 128)

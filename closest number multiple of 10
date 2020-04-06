@@ -1,0 +1,21 @@
+level 7 
+
+def closest_multiple_10(i)
+  res = 0 
+
+   if i >= 0 && i < 10 
+      return 10 
+   end 
+
+   if i % 10 >= 5 
+     res = i + 10 - (i % 10) 
+   else 
+      res = i - (i % 10)
+   end 
+  return res
+end
+
+
+p closest_multiple_10(22)
+p closest_multiple_10(25)
+p closest_multiple_10(37)

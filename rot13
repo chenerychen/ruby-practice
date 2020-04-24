@@ -1,0 +1,19 @@
+def rot13(secret_messages)
+  secret_messages.map { |m|
+    rot13_message(m)
+  }
+end
+
+def rot13_message(secret_message)
+  from = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+  to = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
+
+  secret_message.split('').map { |x|
+    i = from.index(x)
+    if i.nil?
+      x
+    else
+      to[i]
+    end
+  }.join
+end
